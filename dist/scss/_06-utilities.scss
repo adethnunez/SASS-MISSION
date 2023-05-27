@@ -1,0 +1,103 @@
+.btn{
+    display: inline-block;
+    padding: 2rem 1.5rem;
+    border-radius: 5rem;
+  
+    &.blue{
+        font-size: 1.3rem;
+        font-weight: 700;
+        align-items: center;
+        color: $clr-light;
+        background: $clr-blue;
+        border: 1px solid $clr-blue;
+  
+        &:hover{
+            background: $clr-d-blue;
+        }
+    }
+  
+    &.white{
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: $clr-blue;
+        background: $clr-light;
+        border: 2px solid $clr-light;
+  
+        &:hover{
+          color: $clr-light;
+          background: $clr-blue;
+        }
+    }
+  }
+
+    //--------------Margin Right------------//
+
+    $colors: (
+    "dark": $clr-dark,
+    "light": $clr-light,
+    "ble": $clr-blue,
+    "Dark-blue": $clr-d-blue,
+    "transparent": $clr-transparent,
+
+    );
+@each $key,$val in $colors{
+    .text{
+        &--#{$key}{
+            color: $val;
+        }
+
+    }
+
+    .bg{
+        &--#{$key}{
+            background: $val;
+        }
+    }
+}
+
+$displays: flex, block, inline, inline-block, unset, none;
+
+@each $display in $displays{
+
+.d{
+    &--#{$display}{
+        display: $display;
+    }
+   }
+}
+
+$alignments:(
+    "center": center,
+    "between": space-between,
+);
+
+@each $key,$val in $alignments{
+    .text{
+        &--#{$key}{
+            text-align: $val;
+        }
+    }
+}
+
+//--------------Margin Right------------//
+  @for $i from 0 through 20{
+    .mr--#{$i}{
+        margin-right: $i + rem;
+    }
+    .ml--#{$i}{
+        margin-right: $i + rem;
+    }
+    .mt--#{$i}{
+        margin-right: $i + rem;
+    }
+    .mb--#{$i}{
+        margin-right: $i + rem;
+    }
+    .mx--#{$i}{
+        margin: 0 $i + rem;
+    }
+  }
+
+
+  //--------------X axis------------//
+
